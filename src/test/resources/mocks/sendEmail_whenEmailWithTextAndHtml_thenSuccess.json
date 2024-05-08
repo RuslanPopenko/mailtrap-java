@@ -1,0 +1,67 @@
+{
+  "request": {
+    "url": "/api/send",
+    "method": "POST",
+    "headers": {
+      "Api-Token": {
+        "equalTo": "secret-api-token"
+      }
+    },
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$.from[?(@.email == 'sales@example.com')]"
+      },
+      {
+        "matchesJsonPath": "$.from[?(@.name == 'Example Sales Team')]"
+      },
+      {
+        "matchesJsonPath": "$[?(@.to.size() == 1)]"
+      },
+      {
+        "matchesJsonPath": "$.to[?(@.email == 'john_doe@example.com')]"
+      },
+      {
+        "matchesJsonPath": "$.to[?(@.name == 'John Doe')]"
+      },
+      {
+        "matchesJsonPath": "$[?(@.subject == 'Your Example Order Confirmation')]"
+      },
+      {
+        "matchesJsonPath": "$[?(@.text == 'Congratulations on your order no. 1234')]"
+      },
+      {
+        "matchesJsonPath": "$[?(@.html == '<p>Congratulations on your order no. <strong>1234</strong>.</p>')]"
+      },
+      {
+        "matchesJsonPath": "$[?(@.attachments.size() == 1)]"
+      },
+      {
+        "matchesJsonPath": "$.attachments[?(@.type == 'text/html')]"
+      },
+      {
+        "matchesJsonPath": "$.attachments[?(@.filename == 'index.html')]"
+      },
+      {
+        "matchesJsonPath": "$.attachments[?(@.disposition == 'attachment')]"
+      },
+      {
+        "matchesJsonPath": "$.attachments[?(@.content_id == 'example')]"
+      },
+      {
+        "matchesJsonPath": "$.attachments[?(@.content == 'PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9ImVuIj4KCiAgICA8aGVhZD4KICAgICAgICA8bWV0YSBjaGFyc2V0PSJVVEYtOCI+CiAgICAgICAgPG1ldGEgaHR0cC1lcXVpdj0iWC1VQS1Db21wYXRpYmxlIiBjb250ZW50PSJJRT1lZGdlIj4KICAgICAgICA8bWV0YSBuYW1lPSJ2aWV3cG9ydCIgY29udGVudD0id2lkdGg9ZGV2aWNlLXdpZHRoLCBpbml0aWFsLXNjYWxlPTEuMCI+CiAgICAgICAgPHRpdGxlPkRvY3VtZW50PC90aXRsZT4KICAgIDwvaGVhZD4KCiAgICA8Ym9keT4KCiAgICA8L2JvZHk+Cgo8L2h0bWw+Cg==')]"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "content-type": "application/json"
+    },
+    "jsonBody": {
+      "success": true,
+      "message_ids": [
+        "0c7fd939-02cf-11ed-88c2-0a58a9feac02"
+      ]
+    }
+  }
+}

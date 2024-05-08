@@ -1,0 +1,23 @@
+{
+  "request": {
+    "url": "/api/send",
+    "method": "POST",
+    "headers": {
+      "Api-Token": {
+        "equalTo": "secret-api-token"
+      }
+    },
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$.from[?(@.email == 'decode@error.com')]"
+      }
+    ]
+  },
+  "response": {
+    "status": 500,
+    "headers": {
+      "content-type": "text/html"
+    },
+    "body": "Error!!!"
+  }
+}

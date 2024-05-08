@@ -1,0 +1,28 @@
+{
+  "request": {
+    "url": "/api/send",
+    "method": "POST",
+    "headers": {
+      "Api-Token": {
+        "equalTo": "secret-api-token"
+      }
+    },
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$.from[?(@.email == 'eror@error.com')]"
+      }
+    ]
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "content-type": "application/json"
+    },
+    "jsonBody": {
+      "success": false,
+      "errors": [
+        "Email is not valid"
+      ]
+    }
+  }
+}

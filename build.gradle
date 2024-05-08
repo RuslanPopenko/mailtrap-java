@@ -1,0 +1,38 @@
+plugins {
+    id "java"
+    id "maven-publish"
+    id "io.freefair.lombok" version "${lombok_plugin_version}"
+}
+
+apply plugin: "java"
+apply plugin: "maven-publish"
+
+test {
+    useJUnitPlatform()
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+java {
+    withSourcesJar()
+    sourceCompatibility = JavaVersion.VERSION_21
+}
+
+group "com.railware.mailtrap"
+version "1.0-SNAPSHOT"
+description = "Mailtrap Java client"
+
+dependencies {
+    implementation "org.springframework.cloud:spring-cloud-starter-openfeign:${spring_cloud_version}"
+    implementation "io.github.openfeign:feign-jackson:${feign_jackson_version}"
+
+    testImplementation "org.springframework.boot:spring-boot-starter-test:${spring_boot_version}"
+    testImplementation "org.springframework.cloud:spring-cloud-contract-wiremock:${spring_cloud_version}"
+}
+
+wrapper {
+    gradleVersion = "8.5"
+}
