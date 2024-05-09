@@ -48,7 +48,7 @@ After that you can autowire the `MaitrapApi` interface and invoke necessary meth
 ```java
 import com.railsware.mailtrap.client.MailtrapApi;
 ...
-@Atuowired
+@Autowired
 private MailtrapApi mailtrapApi;
 ...
 EmailSendResponse response = mailtrapApi.send(EmailSendRequest.builder()
