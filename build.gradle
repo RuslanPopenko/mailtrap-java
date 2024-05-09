@@ -22,7 +22,7 @@ java {
 }
 
 group "com.railware.mailtrap"
-version "1.0-SNAPSHOT"
+version "1.0"
 description = "Mailtrap Java client"
 
 dependencies {
