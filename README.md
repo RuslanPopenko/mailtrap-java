@@ -6,7 +6,7 @@ Java client for Mailtrap API https://api-docs.mailtrap.io/docs/mailtrap-api-docs
 To build the component on your local machine and put it into the local maven repository, run:
 
 ```bash
-./gradlew clean install
+./gradlew clean publishToMavenLocal
 ```
 
 Note: That you need to have Java 21 installed on your machine.
