@@ -1,5 +1,5 @@
 # mailtrap-java
-Java client for Mailtrap API .
+Java client for Mailtrap API https://api-docs.mailtrap.io/docs/mailtrap-api-docs/.
 
 ## Local use
 
